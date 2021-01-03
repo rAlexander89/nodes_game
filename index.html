@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  </style>
+</head>
+
+<body>
+  
+  <div id='modal'>
+    <div class='modal-content'>
+      <div class='title'>
+        NODES
+      </div>
+  
+      <div class='instructions'>
+        <div class='struct-how'>
+          How to Play:
+        </div>
+      
+        <div class='struct'>
+          You start at the center of the field
+        </div>
+      
+        <div class='struct'>
+          WASD to move on space at a time
+        </div>
+      
+        <div class='struct'>
+          Each movement leaves behind an uncrossable energy trail - blue
+        </div>
+      
+        <div class='struct'>
+          you cannot move over obstacles - purple
+        </div>
+      
+        <div class='struct'>
+          completely move over each unpowered node - pale pink
+        </div>
+      
+        <div class='struct'>
+          powered nodes appear bright pink
+        </div>
+      
+        <div class='struct'>
+          power each node before you run out of energy
+        </div>
+  
+          <div class='modes'>
+            <div class='mode-title'>
+              Pick a difficulty.
+            </div>
+          
+            <div class='mode-options'>
+          
+              <div class='easy' id='dif-select'>
+                Easy
+              </div>
+          
+              <div class='medium' id='dif-select'>
+                Medium
+              </div>
+          
+              <div class='hard' id='dif-select'>
+                Hard
+            </div>
+          </div>
+  
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='hidden' id='game-over'>
+    <div class='modal-content'>
+      <div class='title'>
+        GAME OVER
+      </div>
+      <div class='instructions'>
+        <div class='struct-how'>
+            You lost :[
+          </div>
+        <div class='struct-how'>
+            Play Again?
+          </div>
+        <div class='play-game' id='continue'>
+          Yes
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='hidden' id='winner'>
+    <div class='modal-content'>
+      <div class='title'>WINNER!</div>
+  
+      <div class='instructions'>
+        <div class='struct-how'>
+          Play Again?
+        </div>
+  
+        <div class='play-game' id='continue'>
+          Yes
+        </div>
+      </div>  
+    </div>
+  </div>
+
+  <div id='container'>
+    <div>
+
+      <canvas class='content' id="game" width="420" height='795' style="font-family: VT323;"></canvas>
+    </div>
+    
+    <div class='audio-buttons'>
+
+        <audio id="myAudio">
+          <source src="./src/itat.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        
+        <p>Press . for a new map/Press x to return to the menu</p>
+        <p>Click the buttons to play or pause the audio.</p>
+        
+        <button onclick="playAudio()" type="button" id='button'>Play Audio</button>
+        <button onclick="pauseAudio()" type="button"id='button'>Pause Audio</button>
+      </div>
+    </div>
+    <script src="./src/index.js"></script>
+    
+    
+
+</body>
+
+
+</html>

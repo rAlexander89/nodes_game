@@ -1,0 +1,407 @@
+body{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(-45deg, #060208, #050205, #060208, #140714, #060208);
+	background-size: 400% 400%;
+    animation: gradient 5s ease-in-out infinite;
+}
+
+.noClick {
+   pointer-events: none;
+}
+
+
+@font-face {
+    font-family:'VT323', monospace;
+    src: url(https://fonts.gstatic.com/s/vt323/v12/pxiKyp0ihIEF2isQFJXUdVNFKPY.woff2) format('woff2'),
+}
+
+.hidden {
+  display: none;
+}
+
+#start{
+  display: inline;
+}
+
+.unhidden{
+  display: inline
+}
+
+#game-over{
+  z-index: 2;
+}
+
+#winner{
+  z-index: 2;
+}
+
+#modal{
+  z-index: 1;
+}
+#modal, #game-over, #winner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding-top: 30px;
+    font-family:'VT323', monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: default;
+}
+
+.modal-content{
+    padding-top: 30px;
+    background-color: black;
+    text-align: center;
+    width: 420px;
+    height: 780px;
+    margin: 0 auto;
+}
+
+.noClick {
+   pointer-events: none;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family:'VT323', monospace;
+    margin-top: 30px;
+    z-index: 0;
+}
+
+.modes{
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+
+.instructions {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 2em;
+    margin-top: 35px;
+}
+
+.audio-buttons, button{
+  color: white;
+  line-height: 1px;
+}
+
+button{
+  width: 100px;
+  height: 35px;
+  background: none;
+  border: none;
+  font-family:'VT323', monospace;
+}
+
+.instructions > div {
+    margin-bottom: 10px;
+}
+
+.struct-how{
+    font-size: 30px;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 85px;
+}
+
+.struct{
+    font-size: 15px;
+}
+
+
+
+.text-glow{
+    animation: glowtext 4s infinite alternate;
+    color: #f5baff
+}
+
+
+.content{
+    animation: glow 4s infinite alternate;
+    font-family: 'VT323', monospace;
+} 
+
+.description{
+}
+
+#game{
+    height: 810px;
+    width: 420px;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 4px 0px #030103;
+    }
+    to {
+        box-shadow: 0 0 5px 5px #20071e;
+    }
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.easy, .medium, .hard, #button{
+    cursor: pointer;
+}
+
+
+
+
+.title {
+    color: black;
+    -webkit-text-fill-color: rgb(244, 215, 255); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgba(158, 22, 158, 0.219);
+    animation: neon .08s ease-in-out infinite alternate;
+    animation: inner-neon .08s ease-in-out infinite alternate;
+
+}
+
+.easy:hover, #button:hover{
+    color: black;
+    -webkit-text-fill-color: rgb(215, 246, 255); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgba(104, 175, 255, 0.219);
+    animation: easy-neon .08s ease-in-out infinite alternate;
+    animation: easy-inner-neon .08s ease-in-out infinite alternate;
+
+}
+
+.medium:hover{
+    color: black;
+    -webkit-text-fill-color: rgb(244, 215, 255); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgba(158, 22, 158, 0.219);
+    animation: neon .08s ease-in-out infinite alternate;
+    animation: inner-neon .08s ease-in-out infinite alternate;
+
+}
+
+.hard:hover{
+    color: black;
+    -webkit-text-fill-color: rgb(255, 215, 215); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgba(158, 22, 22, 0.219);
+    animation: hard-neon .08s ease-in-out infinite alternate;
+    animation: hard-inner-neon .08s ease-in-out infinite alternate;
+
+}
+
+.play-game{
+    color: black;
+    -webkit-text-fill-color: rgb(255, 215, 215); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgba(158, 22, 22, 0.219);
+    animation: hard-neon .08s ease-in-out infinite alternate;
+    animation: hard-inner-neon .08s ease-in-out infinite alternate;
+     font-size: 30px;
+
+}
+
+.struct-how, .mode-title{
+    color: black;
+    -webkit-text-fill-color: rgb(245, 255, 104); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgba(158, 144, 22, 0.219);
+
+}
+
+
+/*-- Outerglow Keyframes --*/
+
+
+@keyframes neon {
+  from {
+    text-shadow:
+    0 0 6px rgba(204, 0, 255, 0.92),
+    0 0 25px rgba(202,228,225,0.34),
+    0 0 12px rgba(235, 30, 242, 0.52),
+    0 0 21px rgba(30,132,242,0.92),
+    0 0 30px rgba(235, 30, 242, 0.78),
+    0 0 45px rgba(242, 30, 196, 0.92);
+  }
+  to {
+    text-shadow:
+    0 0 6px rgba(104, 9, 112, 0.98),
+    0 0 26px rgba(202,228,225,0.42),
+    0 0 12px rgba(242, 30, 189, 0.58),
+    0 0 22px rgba(30,132,242,0.84),
+    0 0 25px rgba(242, 30, 214, 0.88),
+    0 0 50px rgb(175, 30, 242);
+  }
+}
+
+@keyframes easy-neon {
+  from {
+    text-shadow:
+    0 0 6px rgba(0, 162, 255, 0.92),
+    0 0 25px rgba(202,228,225,0.34),
+    0 0 12px rgba(30, 228, 242, 0.52),
+    0 0 21px rgba(30,132,242,0.92),
+    0 0 30px rgba(30, 157, 242, 0.78),
+    0 0 45px rgba(30, 129, 242, 0.92);
+  }
+  to {
+    text-shadow:
+    0 0 6px rgba(9, 66, 112, 0.98),
+    0 0 26px rgba(202,228,225,0.42),
+    0 0 12px rgba(30, 217, 242, 0.58),
+    0 0 22px rgba(30,132,242,0.84),
+    0 0 25px rgba(30, 157, 242, 0.88),
+    0 0 50px rgb(30, 164, 242);
+  }
+}
+
+@keyframes title-neon {
+  from {
+    text-shadow:
+    0 0 6px rgba(255, 238, 0, 0.92),
+    0 0 25px rgba(228, 226, 202, 0.34),
+    0 0 12px rgba(238, 242, 30, 0.52),
+    0 0 21px rgba(242, 228, 30, 0.92),
+    0 0 30px rgba(238, 242, 30, 0.78),
+    0 0 45px rgba(242, 210, 30, 0.92);
+  }
+  to {
+    text-shadow:
+    0 0 6px rgba(112, 96, 9, 0.98),
+    0 0 26px rgba(228, 228, 202, 0.42),
+    0 0 12px rgba(242, 238, 30, 0.58),
+    0 0 22px rgba(242, 228, 30, 0.84),
+    0 0 25px rgba(242, 221, 30, 0.88),
+    0 0 50px rgb(221, 242, 30);
+  }
+}
+
+/*-- Innerglow Keyframes --*/
+
+@keyframes inner-neon {
+  from {
+    text-shadow:
+    0 0 3px rgba(213, 3, 255, 0.92),
+    0 0 10px rgba(154, 17, 182, 0.568),
+    0 0 7px rgba(235, 30, 242, 0.52),
+    0 0 15px rgba(242, 30, 231, 0.92),
+    0 0 10px rgba(242, 30, 231, 0.78),
+    0 0 15px rgba(235, 30, 242, 0.92);
+  }
+  to {
+    text-shadow:
+    0 0 5px rgba(245, 133, 236, 0.98),
+    0 0 15px rgba(228, 202, 225, 0.42),
+    0 0 5px rgba(242, 30, 224, 0.58),
+    0 0 18px rgba(242, 30, 196, 0.84),
+    0 0 15px rgba(235, 30, 242, 0.88),
+    0 0 20px rgb(242, 30, 214);
+  }
+}
+
+
+@keyframes easy-inner-neon {
+  from {
+    text-shadow:
+    0 0 3px rgba(3, 175, 255, 0.92),
+    0 0 10px rgba(17, 144, 182, 0.568),
+    0 0 7px rgba(30, 210, 242, 0.52),
+    0 0 15px rgba(30, 182, 242, 0.92),
+    0 0 10px rgba(30, 164, 242, 0.78),
+    0 0 15px rgba(30, 235, 242, 0.92);
+  }
+  to {
+    text-shadow:
+    0 0 5px rgba(133, 210, 245, 0.98),
+    0 0 15px rgba(202, 222, 228, 0.42),
+    0 0 5px rgba(30, 164, 242, 0.58),
+    0 0 18px rgba(30, 200, 242, 0.84),
+    0 0 15px rgba(30, 182, 242, 0.88),
+    0 0 20px rgb(30, 182, 242);
+  }
+}
+
+@keyframes title-inner-neon {
+  from {
+    text-shadow:
+    0 0 3px rgba(251, 255, 3, 0.92),
+    0 0 5px rgba(179, 182, 17, 0.568),
+    0 0 3px rgba(242, 228, 30, 0.52),
+    0 0 4px rgba(242, 221, 30, 0.92),
+    0 0 5px rgba(242, 228, 30, 0.78),
+    0 0 6px rgba(242, 228, 30, 0.92);
+  }
+  to {
+    text-shadow:
+    0 0 5px rgba(245, 234, 133, 0.98),
+    0 0 7px rgba(228, 225, 202, 0.42),
+    0 0 4px rgba(242, 238, 30, 0.58),
+    0 0 10px rgba(242, 210, 30, 0.84),
+    0 0 7px rgba(242, 221, 30, 0.88),
+    0 0 8px rgb(242, 228, 30);
+  }
+}
+
+@keyframes hard-neon {
+  from {
+    text-shadow:
+    0 0 6px rgba(255, 0, 0, 0.92),
+    0 0 25px rgba(228, 202, 210, 0.34),
+    0 0 12px rgba(242, 30, 101, 0.52),
+    0 0 21px rgba(242, 30, 30, 0.92),
+    0 0 30px rgba(242, 30, 76, 0.78),
+    0 0 45px rgba(242, 30, 41, 0.92);
+  }
+  to {
+    text-shadow:
+    0 0 6px rgba(112, 9, 9, 0.98),
+    0 0 26px rgba(228, 202, 210, 0.42),
+    0 0 12px rgba(242, 30, 189, 0.58),
+    0 0 22px rgba(242, 30, 101, 0.84),
+    0 0 25px rgba(242, 30, 65, 0.88),
+    0 0 50px rgb(242, 30, 101);
+  }
+}
+
+@keyframes hard-inner-neon {
+  from {
+    text-shadow:
+    0 0 3px rgba(255, 3, 3, 0.92),
+    0 0 10px rgba(182, 17, 44, 0.568),
+    0 0 7px rgba(242, 30, 30, 0.52),
+    0 0 15px rgba(242, 30, 30, 0.92),
+    0 0 10px rgba(242, 30, 41, 0.78),
+    0 0 15px rgba(242, 30, 30, 0.92);
+  }
+  to {
+    text-shadow:
+    0 0 5px rgba(245, 133, 133, 0.98),
+    0 0 15px rgba(228, 202, 204, 0.42),
+    0 0 5px rgba(242, 30, 30, 0.58),
+    0 0 18px rgba(242, 30, 30, 0.84),
+    0 0 15px rgba(242, 30, 48, 0.88),
+    0 0 20px rgb(242, 30, 65);
+  }
+}
+
+
