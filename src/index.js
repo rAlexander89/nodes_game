@@ -27,7 +27,7 @@ easy_btn.addEventListener("click", () => {
     mode = {
         blank: 90,
         food: 95,
-        ratio: 4
+        ratio: 5
     }
 })
 
@@ -37,7 +37,7 @@ medium_btn.addEventListener("click", () => {
         mode = {
         blank: 85,
         food: 95,
-        ratio: 4
+        ratio: 5
     }
 })
 
@@ -47,7 +47,7 @@ hard_btn.addEventListener("click", () => {
     mode = {
         blank: 80,
         food: 85,
-        ratio: 4
+        ratio: 5
     }
 })
 
@@ -55,7 +55,6 @@ hard_btn.addEventListener("click", () => {
 
 window.addEventListener('click', (event) => {  
 
-    debugger
     let canvas = document.getElementById("game");
     let c = canvas.getContext('2d');
 
@@ -65,8 +64,8 @@ window.addEventListener('click', (event) => {
     if(go && event.target.id === 'continue'){
         c.clearRect(0, 0, canvas.width, canvas.height);
         go = false
-        board = null; //new Grid(15, 15, "#060208")
-        player = null; // new GamePiece(board, "#c95ed1")
+        board = null;
+        player = null;
         document.getElementById("modal").classList.remove("hidden")
         document.getElementById("game-over").classList.add("hidden")
         document.getElementById("winner").classList.add("hidden")
@@ -76,12 +75,12 @@ window.addEventListener('click', (event) => {
 
         c.font = "40px VT323";
         c.fillStyle = "#ffffff";
-        c.fillText("REMEMBER", canvas.width * .42, canvas.height * .25);
+        c.fillText("REMEMBER", canvas.width * .37, canvas.height * .25);
             
         c.font = "20px VT323";
         c.fillStyle = "#ffffff";
-        c.fillText("* press . to start a new map", 125, 250);
-        c.fillText("* press x to return to menu", 125, 275);
+        c.fillText("* press . to start a new map", 110, 250);
+        c.fillText("* press x to return to menu", 110, 275);
 
     let keysPressed = {}
 
@@ -177,7 +176,11 @@ window.addEventListener('click', (event) => {
         constructor(grid, color) {
             this.grid = grid
             this.body = new Player(0, 0, this.grid.width, this.grid.height, color)
-            this.location = this.grid.blocks[(this.grid.blocks.length / 2 )]
+            this.location = this.grid.blocks[(this.grid.blocks.length / 2 ) + 14]
+            // this.location = this.grid.blocks[(this.grid.blocks.length)]
+            console.log('logging location')
+            // console.log(this.location)
+            // debugger
             this.origin = this.location
             this.prev = this.origin
         }
