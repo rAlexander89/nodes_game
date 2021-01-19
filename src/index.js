@@ -177,10 +177,7 @@ window.addEventListener('click', (event) => {
             this.grid = grid
             this.body = new Player(0, 0, this.grid.width, this.grid.height, color)
             this.location = this.grid.blocks[(this.grid.blocks.length / 2 ) + 14]
-            // this.location = this.grid.blocks[(this.grid.blocks.length)]
             console.log('logging location')
-            // console.log(this.location)
-            // debugger
             this.origin = this.location
             this.prev = this.origin
         }
@@ -228,16 +225,13 @@ window.addEventListener('click', (event) => {
                         if (this.grid.moves < 0) {
                             // check lose condition
                             c.clearRect(0, 0, canvas.width, canvas.height);
-                            // document.getElementById("game").classList.add("hidden")
                             document.getElementById("game-over").classList.remove("hidden")    
                             break
                         } else if (this.grid.count < 1 && this.grid.moves >= 0) {
                             // check win condition
                             c.clearRect(0, 0, canvas.width, canvas.height);
-                            // document.getElementById("game").classList.add("hidden")
                             document.getElementById("winner").classList.remove("hidden") 
                             break
-                            //  document.getElementById("winner").classList.remove("hidden")
                         }
 
 
